@@ -88,10 +88,10 @@ class MicrowaveRAG:
 
             # Retrieve context
             context_chunks = self.text_processor.search(
-                search_mode=SearchMode.COSINE_DISTANCE,
+                search_mode=SearchMode.EUCLIDIAN_DISTANCE,
                 user_request=user_input,
                 top_k=5,
-                min_score_threshold=0.01,
+                score_threshold=0.01,
                 dimensions=1536
             )
             context = "\n\n".join(context_chunks)
